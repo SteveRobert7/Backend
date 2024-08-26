@@ -1,0 +1,28 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "TEST",
+    "collectionId": "03b04679-ff25-40a9-9cf4-775d3ce0c0a7",
+    "dateExported": "2024-08-23T17:58:38.048Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b1caccea-2a10-4e4d-8e97-69334fbe907d",
+            "colId": "03b04679-ff25-40a9-9cf4-775d3ce0c0a7",
+            "containerId": "",
+            "name": "http://localhost:5001/status",
+            "url": "http://localhost:5001/status",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-08-23T17:58:19.598Z",
+            "modified": "2024-08-23T17:58:19.598Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\"name\":\"pandi\"}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "krBPhAoVJ1ppHMle8_yDW981XC5NgiOxxw5VlQOrS0nl5QOVo_VpENph80TMAXGfQjQZNTuovsWF8Nd7qkf7uw"
+}
