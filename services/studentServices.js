@@ -1,7 +1,17 @@
 studentServices = {
   Get: (req) => {
     let studentsList = createStudents();
-    console.log(studentsList);
+    let reqid = parseInt(req.params.id);
+    if (reqid){
+      let reqStudent = studentsList.find(student => student.id === reqid);
+      if(reqStudent){
+        return reqStudent
+      }
+      else{return {error:"student not found"}};
+    }
+
+
+    // console.log(studentsList);
     return studentsList;
   },
 };
@@ -38,4 +48,9 @@ function createStudents() {
   }
 
   return students;
+}
+
+
+function createStudentsCsv(){
+  
 }

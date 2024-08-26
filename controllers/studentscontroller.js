@@ -1,7 +1,13 @@
 
 const students = require("../services/studentServices");
 
-module.exports = (req,res)=>{
-    let result = students.Get();
-    res.send(result);
+module.exports = {
+    getAllStudents:(req,res) => {
+        let result = students.Get(req, res);
+        res.send(result);
+    },
+    getStudentById:(req,res) => {
+        let result = students.Get(req, res);    
+        res.send(result);
+    }
 };
