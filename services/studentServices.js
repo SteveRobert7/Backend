@@ -17,7 +17,8 @@ studentServices = {
     return studentsList;
   },
   CreateStudent: (req, res) => {
-    let newStudent = inputNewStudent();
+    let newStudent = inputNewStudent(req);
+    res.json(newStudent);
   },
 };
 
@@ -55,17 +56,24 @@ function createStudentsCsv() {
   return res;
 }
 
-function inputNewStudent() {
+function inputNewStudent(req) {
   let inputBody = req.body;
   let newstudentsList = createStudents();
-  let newId = newstudentsList[len(newstudentsList) - 1].id + 1;
+  let newId = parseInt(newstudentsList[newstudentsList.length - 1].id) + 1;
 
   let student = new Student(newId, inputBody.name, inputBody.standard);
-  newstudentsList.append(student);
+  newstudentsList.push(student);
 
-  student.writefile("./staticFiles/students.csv");
+  writeFile(newstudentsList);
+  return student;
 }
 
+
+function writeFile(studentsList) {
+  const header = "id,name,standard";
+  const csvData = studentsList.map(student => `${student.id},${student.name},${student.standard}`).join('\n');
+  fs.writeFileSync("staticFiles/students.csv", `${header}\n${csvData}`);
+}
 // const studentsData = [
 //   { name: "jerin", standard: "UKG" },
 //   { name: "vylu", standard: "5" },

@@ -10,7 +10,7 @@ module.exports = {
     res.send(result);
   },
   createStudent: (req, res) => {
-    let result = students.Create(req, res);
-    res.send(req.body);
+    let result = students.CreateStudent(req, res);
+    res.send(result);
   },
 };
