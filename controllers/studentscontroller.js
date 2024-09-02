@@ -13,5 +13,8 @@ module.exports = {
     let result = students.CreateStudent(req, res);
     res.send(result);
   },
+  deleteStudent: (req, res) => {
+    let result = students.DeleteStudent(req, res);
+    res.send(result);
+  },
 };
-  
