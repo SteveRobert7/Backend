@@ -17,4 +17,9 @@ module.exports = {
     let result = students.DeleteStudent(req, res);
     res.send(result);
   },
+  updateStudent: (req, res) => {
+    let result = students.UpdateStudent(req, res);
+    res.send(result);
+  },
+
 };

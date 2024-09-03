@@ -37,6 +37,11 @@ studentServices = {
     let newStudentsList = delStudent(req);
     res.json(newStudentsList);
   },
+
+  UpdateStudent: (req, res) => {
+    let updatedStudent = editStudent(req);
+    res.json(updatedStudent);
+  },
 };
 
 module.exports = studentServices;
@@ -48,6 +53,8 @@ class Student {
     this.standard = standard;
   }
 }
+
+
 
 function createStudents() {
   const studentsData = createStudentsCsv();
@@ -132,6 +139,24 @@ function delStudent(req) {
   }
 }
 
+
+function editStudent(req) {
+  let inputBody = req.body;
+  let reqid = req.params.id
+  let studentsList = createStudents();
+  let studentId = studentsList.findIndex(student => student.id === reqid);
+  if (studentId) {
+    studentsList[studentId].name = inputBody.name ? inputBody.name : studentsList[studentId].name ;
+    studentsList[studentId].standard = inputBody.standard ? inputBody.standard : studentsList[studentId].standard ;
+
+    writeFile(studentsList);
+    return studentsList[studentId];
+    
+  }
+  else {
+    return {error : "student not found"}
+  }
+}
 
 
 
