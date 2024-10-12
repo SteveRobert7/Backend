@@ -4,7 +4,7 @@ app.use(express.json());
 const PORT = 5001;
 
 const students = require("./routers/studentsrouter");
-const home = require("./routers/homerouter");
+// const home = require("./routers/homerouter");
 
 app.listen(PORT, () => {
   console.log("Server listening on port: ", PORT);
@@ -18,15 +18,16 @@ app.listen(PORT, () => {
 //   res.send("Welcome to the Express server!");
 // });
 
-app.use(home);
+// app.use(home);
+
 app.use(students);
 
 // Define the /status route
-app.post("/status", (req, res) => {
-  let data = req.body.name;
-  res.json({ message: `Server is running! hello ${data}` });
-});
+// app.post("/status", (req, res) => {
+//   let data = req.body.name;
+//   res.json({ message: `Server is running! hello ${data}` });
+// });
 
-app.get("/api/cources", (req, res) => {
-  res.send([1, 2, 3]);
-});
+// app.get("/api/cources", (req, res) => {
+//   res.send([1, 2, 3]);
+// });
