@@ -4,8 +4,8 @@ const fs = require("fs");
 const db = require('../Data/mysqlStudentDataRepo');
 
 studentServices = {
-  Get: (req,res) => {
-    let students = db.Get(req,res);
+  Get:  (req,res) => {
+    let students = db.Get(req, res);
     return students
   },
 

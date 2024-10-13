@@ -1,12 +1,12 @@
 const students = require("../services/studentServices");
 
 module.exports = {
-  getAllStudents: (req, res) => {
-    let result = students.Get(req, res);
+  getAllStudents: async (req, res) => {
+    let result = await students.Get(req, res);
     res.send(result);
   },
-  getStudentById: (req, res) => {
-    let result = students.Get(req, res);
+  getStudentById: async (req, res) => {
+    let result = await students.Get(req, res);
     res.send(result);
   },
   createStudent: (req, res) => {
