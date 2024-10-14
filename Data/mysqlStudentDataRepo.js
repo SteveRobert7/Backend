@@ -1,4 +1,6 @@
-const dbC = require('./dbConnection');
+import  dbC  from './dbConnection.js';
+
+
 
 const mysqlStudentData = {
   Get: async (req, res) => {
@@ -27,4 +29,4 @@ const mysqlStudentData = {
   }
 };
 
-module.exports = mysqlStudentData;
+export default mysqlStudentData;

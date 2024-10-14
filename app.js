@@ -1,9 +1,9 @@
-const express = require("express");
+import express, { json } from "express";
 const app = express();
-app.use(express.json());
+app.use(json());
 const PORT = 5001;
 
-const students = require("./routers/studentsrouter");
+import students from "./routers/studentsrouter.js";
 
 app.listen(PORT, () => {
   console.log("Server listening on port: ", PORT);

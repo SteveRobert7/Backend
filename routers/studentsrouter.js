@@ -1,13 +1,13 @@
-const { Router } = require("express");
+import { Router } from "express";
 const router = Router();
 
-const studentController = require("../controllers/studentscontroller");
+import { getAllStudents, getStudentById, createStudent, deleteStudent, updateStudent } from "../controllers/studentscontroller.js";
 
-router.get("/students", studentController.getAllStudents);
-router.get("/students/:id?", studentController.getStudentById);
-router.post("/student/create",studentController.createStudent);
-router.delete("/student/:id?",studentController.deleteStudent);
-router.put("/student/:id",studentController.updateStudent);
+router.get("/students", getAllStudents);
+router.get("/students/:id?", getStudentById);
+router.post("/student/create",createStudent);
+router.delete("/student/:id?",deleteStudent);
+router.put("/student/:id",updateStudent);
 
-module.exports = router;
+export default router;
 

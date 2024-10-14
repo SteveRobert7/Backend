@@ -1,11 +1,11 @@
-const { error } = require("console");
-const fs = require("fs");
+import { error } from "console";
+import fs from "fs";
 // const csvRepo = require("../Data/csvFileDataRepo");
-const db = require('../Data/mysqlStudentDataRepo');
+import  mysqlStudentData  from '../Data/mysqlStudentDataRepo.js';
 
-studentServices = {
+const studentServices = {
   Get:  (req,res) => {
-    let students = db.Get(req, res);
+    let students = mysqlStudentData.Get(req, res);
     return students
   },
 
@@ -64,7 +64,7 @@ studentServices = {
 //   },
 // };
 
-module.exports = studentServices;
+export default studentServices;
 
 class Student {
   constructor(id, name, standard) {
