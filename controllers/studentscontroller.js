@@ -5,7 +5,7 @@ export async function getAllStudents(req, res) {
   res.send(result);
 }
 export async function getStudentById(req, res) {
-  let result = await Get(req, res);
+  let result = await studentServices.Get(req, res);
   res.send(result);
 }
 export function createStudent(req, res) {

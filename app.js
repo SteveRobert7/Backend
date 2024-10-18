@@ -1,9 +1,16 @@
 import express, { json } from "express";
+import cors from 'cors';
 const app = express();
 app.use(json());
 const PORT = 5001;
 
 import students from "./routers/studentsrouter.js";
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 app.listen(PORT, () => {
   console.log("Server listening on port: ", PORT);
